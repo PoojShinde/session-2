@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+  <style>
+    #gallery{
+        display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:10px;
+            
+           
+    }
+    #gallery img{
+        width: 100%;
+        aspect-ratio: 3/2;
+        
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Gallery({ children }) {
+      return(
+         <div id = "gallery">
+            {
+                children.map((ele)=>{
+
+                    return <img src={ele} alt=""/>
+
+
+                })
+            }
+        </div>
+
+      )
+}
+  
+const App = () =>{
+
+    let children = [
+        "https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=daylight-forest-glossy-443446.jpg&fm=jpg",
+        
+        "https://th.bing.com/th/id/OIP.CSThJ0qpV3XKsURD0iKZ0AHaEK?rs=1&pid=ImgDetMain",
+        "https://wallpapercave.com/wp/wp2665214.jpg"
+    ]
+    return(
+        <div>
+            <Gallery children = {children} />
+            
+        </div>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
+
+
+
+    
+  </script>
+</body>
+</html>
