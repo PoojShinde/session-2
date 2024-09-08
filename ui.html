@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Components in React</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+    
+    }
+   #compo{
+    text-align: center;
+    margin-top: 50px;
+    font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+    
+    
+   }
+   #compo span{
+    color: #47BB78;
+    /* background-color: #C6F6D5; */
+   }
+   .background{
+    background-color: #C6F6D5;
+    height: 15px;
+    width: 170px;
+    margin-left: 53.5%;
+    margin-top: -15px;
+   }
+   .all{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    
+   }
+   .cards div{
+    background-color: #C6F6D5;
+    border-radius: 2px;
+    width: 25px;
+    height: 25px;
+    margin-left: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+   }
+   .cards p{
+    font-size: small;
+    color: grey;
+   }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Write your code here
+    const Ui = () =>{
+        return(
+            <div id = "compo">
+                <h1>Getting Started in <span>3 easy steps</span></h1>
+                <h1 className = "background"></h1>
+                
+            </div>
+        )
+    }
+    
+    const Cards = () =>{
+            return(
+                <div className = "all">
+                <div className = "cards">
+                    <div>01</div>
+                    <br/>
+                    <h3>Find your template</h3><br/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sint molestiae optio natus tenetur, culpa nulla tempora nostrum nobis quae, expedita accusamus ducimus. In placeat obcaecati eaque nostrum reprehenderit blanditiis eius eos perspiciatis amet non voluptatum quis sapiente laboriosam, dignissimos asperiores facere officia accusantium velit, neque ad aliquid eum quam.</p>
+                </div>
+                <div className = "cards">
+                    <div>02</div><br/>
+                    <h3>Copy the code</h3><br/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, nesciunt. Eaque enim expedita laborum quo voluptatibus eum, animi unde quasi voluptate illum aspernatur beatae cupiditate. Cupiditate, ratione consequatur enim animi eum aliquam laborum, eligendi quos, quo itaque magni at laudantium ipsum in. Inventore sint vero facere nam consequatur, sed aliquam!</p>
+                </div>
+                <div className = "cards">
+                    <div>03</div><br/>
+                    <h3>Enjoy your free time</h3><br/>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus expedita hic nisi illum quod dignissimos, harum nihil cumque nobis quae, excepturi eaque. Velit laboriosam sunt exercitationem ipsa? Nulla quas similique nisi distinctio eveniet cupiditate laudantium error quae porro, aliquam beatae totam quis quos fugit incidunt odit veniam soluta amet. Nemo?</p>
+                </div>
+            </div>
+            )
+                
+                   
+                
+
+            
+    }
+
+    const App = () =>{
+        
+        return(
+            <div>
+                <Ui/>
+                <Cards />
+               
+
+               
+            </div>
+        )
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'))
+   
+  </script>
+
+  
+</body>
+</html>
